@@ -17,6 +17,10 @@
  * Define Global Variables
  * 
 */
+const navbar = document.getElementById('navbar__list');
+const navItems = document.querySelectorAll('.navItem');
+const sections = document.querySelectorAll('section');
+const navItemNames = document.querySelectorAll('h2');
 
 
 /**
@@ -34,6 +38,16 @@
 */
 
 // build the nav
+for (section of sections) {
+    const navItem = document.createElement('li');
+    const navLink = document.createElement('a');
+    navLink.textContent = document.querySelector('h2').textContent;
+    navLink.classList.add('menu__link');
+    navItem.appendChild(navLink);
+    navbar.appendChild(navItem);
+
+}
+
 
 
 // Add class 'active' to section when near top of viewport
@@ -44,8 +58,8 @@
 
 /**
  * End Main Functions
- * Begin Events
- * 
+ * Begin Eventsß
+ *
 */
 
 // Build menu 
@@ -55,4 +69,3 @@
 // Set sections as active
 
 
-console.log("connected!");
