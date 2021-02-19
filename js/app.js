@@ -42,15 +42,13 @@ for (section of sections) {
     const navItem = document.createElement('li');
     const navLink = document.createElement('a');
     navLink.textContent = document.querySelector('h2').textContent;
-    navLink.classList.add('navItem');
+    navLink.classLst.add('navItem');
+    navLink.href = "#" + section.id;
     navItem.appendChild(navLink);
     navbar.appendChild(navItem);
 }
 
-
-
 // Add class 'active' to section when near top of viewport
-
 
 // Scroll to anchor ID using scrollTO event
 
