@@ -10,6 +10,10 @@
 
 
 /* ---- Base Rules ---- */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
@@ -64,33 +68,67 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    background-color: #30303e;
+    padding: 0 30px;
+    height: 4em;
+}
+
+#logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5em;
+    margin-left: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 .navbar__menu ul {
+    flex-basis: 70%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    padding-left: 0;
-    margin: 0;
-    text-align: right;
+    justify-content: space-between;
     list-style-type: none;
+    text-decoration: none;
 }
 
 .navbar__menu li {
     color: #fff;
-    margin: 0 5em;
+    margin: 0 2em;
 }
 
-.navbar__menu .menu__link {
+.navbar__menu .navItem {
     display: block;
     padding: 1em;
     font-weight: bold;
     color: #fff;
+    text-decoration: none;
 }
 
-.navbar__menu .menu__link:hover {
-    background: #333;
-    color: rgb(226, 12, 12);
+.navbar__menu .navItem:hover {
+    background: #ffffff30;
+    color: #e66114;
     transition: ease 0.3s all;
+    border-radius: 2em;
+}
+
+.active {
+    border-bottom: 2px solid #fff;
+}
+
+.menu-icon {
+    display:none;
+}
+
+@media screen and (max-width: 600px) {
+    .icon-line {
+        display: block; 
+    }
 }
 
 /* Header Styles */
@@ -140,7 +178,7 @@ section:nth-of-type(even) .landing__container {
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
 section:nth-of-type(odd) .landing__container::before {
     content: '';
-    background: rgba(255, 255, 255, 0.187);
+    background: #ffffff30;
     position: absolute;
     z-index: -5;
     width: 20vh;
@@ -199,17 +237,17 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+section.active-section {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-section.your-active-class .landing__container::before {
+section.active-section .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section.active-section .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }

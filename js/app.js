@@ -42,10 +42,9 @@ for (section of sections) {
     const navItem = document.createElement('li');
     const navLink = document.createElement('a');
     navLink.textContent = document.querySelector('h2').textContent;
-    navLink.classList.add('menu__link');
+    navLink.classList.add('navItem');
     navItem.appendChild(navLink);
     navbar.appendChild(navItem);
-
 }
 
 
