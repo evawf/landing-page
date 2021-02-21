@@ -64,6 +64,15 @@ section {
     min-height: 80vh;
 }
 
+#debug {
+    position:fixed;
+    z-index: 100;
+    top:200px;
+    left:0;
+    background:black;
+    border: solid 1px red;
+    padding:50px;
+}
 
 /* ---- Module Rules ---- */
 
@@ -102,7 +111,7 @@ nav {
     margin: 0 2em;
 }
 
-.navbar__menu .navItem {
+.navbar__menu .nav-link {
     display: block;
     padding: 1em;
     font-weight: bold;
@@ -110,14 +119,14 @@ nav {
     text-decoration: none;
 }
 
-.navbar__menu .navItem:hover {
+.navbar__menu .nav-link:hover {
     background: #ffffff30;
     color: #e66114;
     transition: ease 0.3s all;
     border-radius: 2em;
 }
 
-.active {
+nav .active {
     border-bottom: 2px solid #fff;
 }
 
@@ -138,7 +147,6 @@ nav {
     top: 0;
     width: 100%;
     z-index: 5;
-    height: 3em;
 }
 
 /* Footer Styles */

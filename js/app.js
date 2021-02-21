@@ -18,17 +18,14 @@
  * 
 */
 const navbar = document.getElementById('navbar__list');
-const navItems = document.querySelectorAll('.navItem');
 const sections = document.querySelectorAll('section');
-const navItemNames = document.querySelectorAll('h2');
-
-
+const navItems = document.getElementsByClassName('nav-item');
+let navbarHeight = 0;
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
-
 
 
 /**
@@ -38,24 +35,52 @@ const navItemNames = document.querySelectorAll('h2');
 */
 
 // build the nav
-for (section of sections) {
-    const navItem = document.createElement('li');
-    const navLink = document.createElement('a');
-    navLink.textContent = document.querySelector('h2').textContent;
-    navLink.classLst.add('navItem');
-    navLink.href = "#" + section.id;
-    navItem.appendChild(navLink);
-    navbar.appendChild(navItem);
+function buildNav() {
+    for (section of sections) {
+        const navItem = document.createElement('li');
+        const navLink = document.createElement('a');
+        navLink.textContent = section.querySelector('h2').textContent;
+        navItem.classList.add('nav-item');
+        navLink.classList.add('nav-link');
+        navLink.href = "#" + section.id;
+        navItem.id = "nav-" + section.id;
+        navItem.appendChild(navLink);
+        navbar.appendChild(navItem);
+    }
+    navbarHeight = document.getElementById('top').offsetHeight;
 }
 
+buildNav();
+
 // Add class 'active' to section when near top of viewport
+window.onscroll = function () { activeSection() };
+
+function debug(text) {
+    document.getElementById('debug').textContent = text;
+}
+
+function activeSection() {
+    sections.forEach(section => {
+        section.classList.remove('active-section');
+        navItem = document.getElementById("nav-" + section.id);
+        navItem.classList.remove('active')
+        if (
+            (section.offsetTop - window.pageYOffset < navbarHeight)
+            &&
+            (section.offsetTop + section.offsetHeight - window.pageYOffset > navbarHeight)
+        ) {
+            navItem.classList.add('active');
+            section.classList.add('active-section');
+        }
+    });
+}
 
 // Scroll to anchor ID using scrollTO event
 
 
 /**
  * End Main Functions
- * Begin Eventsß
+ * Begin Events
  *
 */
 
