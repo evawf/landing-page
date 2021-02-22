@@ -1,38 +1,8 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
-
-/**
- * Define Global Variables
- * 
-*/
+//Define Global Variables
 const navbar = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
 const navItems = document.getElementsByClassName('nav-item');
 let navbarHeight = 0;
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
 
 // build the nav
 function buildNav() {
@@ -49,21 +19,18 @@ function buildNav() {
     }
     navbarHeight = document.getElementById('top').offsetHeight;
 }
-
 buildNav();
 
 // Add class 'active' to section when near top of viewport
 window.onscroll = function () { activeSection() };
-
 function debug(text) {
     document.getElementById('debug').textContent = text;
 }
-
 function activeSection() {
     sections.forEach(section => {
         section.classList.remove('active-section');
         navItem = document.getElementById("nav-" + section.id);
-        navItem.classList.remove('active')
+        navItem.classList.remove('active');
         if (
             (section.offsetTop - window.pageYOffset < navbarHeight)
             &&
@@ -75,19 +42,22 @@ function activeSection() {
     });
 }
 
-// Scroll to anchor ID using scrollTO event
+//Hide fixed navigationbar 
+var isScrolling;
+window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('nav');
+    navbar.style.display = "flex";
+    window.clearTimeout(isScrolling);
+    isScrolling = setTimeout(function () {
+        navbar.style.display = "none";
+    }, 2500);
+}, false);
+
+//Add a scroll to Top buttion
+
+//Make sections collapsible
 
 
-/**
- * End Main Functions
- * Begin Events
- *
-*/
 
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
 
 
