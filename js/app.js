@@ -23,9 +23,6 @@ buildNav();
 
 // Add class 'active' to section when near top of viewport
 window.onscroll = function () { activeSection() };
-function debug(text) {
-    document.getElementById('debug').textContent = text;
-}
 function activeSection() {
     sections.forEach(section => {
         section.classList.remove('active-section');
@@ -53,7 +50,26 @@ window.addEventListener('scroll', function () {
     }, 2500);
 }, false);
 
+//Click anchor link to scroll smoothly
+// document.querySelectorAll('a[href^="#').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         document.querySelector(this.getAttribute('href')).scrollIntoView({
+//             behavior: 'smooth'
+//         });
+//     });
+// });
+
 //Add a scroll to Top buttion
+const topBtn = document.getElementById("top-btn");
+window.onscroll = function () { displayTopBtn() };
+function displayTopBtn() {
+    if (window.pageYOffset > 100) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+}
 
 //Make sections collapsible
 
