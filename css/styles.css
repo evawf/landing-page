@@ -16,10 +16,10 @@ html {
 
 body {
     background: #88cbab;
-    background: linear-gradient(0deg, #88cbab 0%, #000d3c 100%);
+    background: linear-gradient(0deg, #88cbab 0%, #e8e9ec 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
-    color: #fff;
+    color: #e66114;
 }
 
 /* Typeography General*/
@@ -38,15 +38,15 @@ h1 {
 }
 
 h2 {
-    border-bottom: 1px solid #cc1;
+    border-bottom: 1px solid #30303e;
     font-family: 'Oxygen', Sans-Serif;
     font-size: 3em;
-    color: #fff;
+    color: #e66114;
 }
 
 p {
     line-height: 1.6em;
-    color: #eee;
+    color: black;
 }
 
 #top-btn a {
@@ -62,13 +62,26 @@ p {
     
 }
 /* ---- Layout Rules ---- */
-main {
-    margin: 10vh 1em 10vh;
-}
-
 .main-hero {
     min-height: 40vh;
-    padding-top: 3em;
+    display: relative;
+}
+
+#cover #cover-photo {
+    width: 100%;
+    height: auto;
+}
+
+.cover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cover-text h2 {
+    color: #e66114;
+    text-shadow: 2px 2px #fff;
 }
 
 section {
@@ -87,7 +100,7 @@ nav {
     font-size: 1rem;
     background-color: #30303e;
     padding: 0 30px;
-    height: 4em;
+    height: 3.5em;
 }
 
 #logo {
@@ -122,14 +135,12 @@ nav {
 }
 
 .navbar__menu .nav-link:hover {
-    background: #ffffff30;
     color: #e66114;
     transition: ease 0.3s all;
-    border-radius: 2em;
 }
 
-nav .active {
-    border-bottom: 2px solid #fff;
+nav .active .nav-link {
+    color: #e66114;
 }
 
 .menu-icon {
@@ -162,14 +173,13 @@ nav .active {
 /* Footer Styles */
 .page__footer {
     background: #000;
-    padding: 3em;
+    padding: 1em;
     color: #fff;
 }
 
 .page__footer p{
     color: #fff;
 }
-
 
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
@@ -201,11 +211,26 @@ nav .active {
     }
 }
 
-
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
     text-align: right; 
+}
+
+.section-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 6em 0;
+}
+
+.section-text {
+    margin: 0 1em;
+}
+
+.section-photo img {
+    width: 24em;
+    margin: 0 2em;
 }
 
 /* Background Circles */

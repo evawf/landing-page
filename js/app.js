@@ -28,6 +28,12 @@ function activeSection() {
         section.classList.remove('active-section');
         navItem = document.getElementById("nav-" + section.id);
         navItem.classList.remove('active');
+        const topBtn = document.getElementById("top-btn");
+        if (window.pageYOffset > 100) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
         if (
             (section.offsetTop - window.pageYOffset < navbarHeight)
             &&
@@ -61,15 +67,15 @@ window.addEventListener('scroll', function () {
 // });
 
 //Add a scroll to Top buttion
-const topBtn = document.getElementById("top-btn");
-window.onscroll = function () { displayTopBtn() };
-function displayTopBtn() {
-    if (window.pageYOffset > 100) {
-        topBtn.style.display = "block";
-    } else {
-        topBtn.style.display = "none";
-    }
-}
+// const topBtn = document.getElementById("top-btn");
+// window.onscroll = function () { displayTopBtn() };
+// function displayTopBtn() {
+//     if (window.pageYOffset > 100) {
+//         topBtn.style.display = "block";
+//     } else {
+//         topBtn.style.display = "none";
+//     }
+// }
 
 //Make sections collapsible
 
