@@ -1,4 +1,4 @@
-/* For screen size less than 768px*/
+/* For screen size less than 768px
 @media only screen and (max-width: 768px) {
     nav {
         font-size: 1em;
@@ -59,7 +59,7 @@
 }
 
 /* For screen size bigger than 560px */
-@media only screen and (min-width: 35em) {
+/* @media only screen and (min-width: 35em) {
     .landing__container {
         max-width: 60em;
     }
@@ -78,5 +78,74 @@
         position: fixed;
         top: 43em;
         right: 1em;
+    }
+} */
+
+
+/* For screen size less than 400px */
+@media only screen and (max-width: 425px) {
+    main {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr 1fr;
+        grid-gap: 0.1em;
+        grid-template-areas:
+        "cover"
+        "section1"
+        "section2"
+        "section3"
+        "section4";
+    }
+
+    #cover {
+        grid-area: cover;
+    }
+
+    #section1 {
+        grid-area: section1;
+    }
+
+    #section2 {
+        grid-area: section2;
+    }
+
+    #section3 {
+        grid-area: section3;
+    }
+
+    #section4 {
+        grid-area: section4;
+    }
+
+    main .cover-text h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .cover-text {
+        position: absolute;
+        top: 50%;
+        left: 1000px;
+        transform: translate(-50%, -50%);
+    }
+
+    .landing__container {
+        padding: 1em;
+        text-align: left;
+        max-width: 30em;
+        padding: 2em 2em;
+    }
+
+    .section-content {
+        display: flex;
+        flex-direction: column;
+        flex-flow: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .section-photo {
+        margin: 2em 0;
     }
 }
