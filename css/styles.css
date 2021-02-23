@@ -16,37 +16,41 @@ html {
 
 body {
     background: #88cbab;
-    background: linear-gradient(0deg, #88cbab 0%, #e8e9ec 100%);
+    background: linear-gradient(0deg, #e9eceb 0%, #e8e9ec 100%);
     margin: 0;
+    padding: 0;
     font-family: 'Merriweather', serif;
-    color: #e66114;
-}
-
-/* Typeography General*/
-h1 {
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 3em;
-    margin: 2em 1rem;
-}
-
-/* For scree size greater than 560px */
-@media only screen and (min-width: 35em){
-    h1 {
-        font-size: 5em;
-        margin: 2em 4rem 1em;
-    }
+    color: #30303e;
 }
 
 h2 {
     border-bottom: 1px solid #30303e;
     font-family: 'Oxygen', Sans-Serif;
     font-size: 3em;
-    color: #e66114;
+    color: #30303e;
 }
 
 p {
     line-height: 1.6em;
     color: black;
+}
+
+.cover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cover-text h2 {
+    text-shadow: 2px 2px white;
+}
+
+/* ---- Layout Rules ---- */
+.main__hero {
+    min-height: 800px;
+    background: url(../images/cover.jpg) no-repeat center;
+    background-size: cover;
 }
 
 #top-btn a {
@@ -59,36 +63,7 @@ p {
     align-items: center;
     justify-content: center;
     display: flex;
-    
 }
-/* ---- Layout Rules ---- */
-.main-hero {
-    min-height: 40vh;
-    display: relative;
-}
-
-#cover #cover-photo {
-    width: 100%;
-    height: auto;
-}
-
-.cover-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.cover-text h2 {
-    color: #e66114;
-    text-shadow: 2px 2px #fff;
-}
-
-section {
-    position: relative;
-    min-height: 80vh;
-}
-
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
@@ -101,6 +76,7 @@ nav {
     background-color: #30303e;
     padding: 0 30px;
     height: 3.5em;
+    font-family: 'Oxygen', Sans-Serif;
 }
 
 #logo {
@@ -147,10 +123,56 @@ nav .active .nav-link {
     display:none;
 }
 
-/* For screen size less than 600px*/
-@media screen and (max-width: 35em) {
-    .icon-line {
-        display: block; 
+/* For screen size less than 768px*/
+@media only screen and (max-width: 768px) {
+    nav {
+        font-size: 1em;
+        text-align: center; 
+        justify-content: space-around; 
+    }
+
+    nav #logo {
+        font-size: 1em;
+    }
+
+    nav .nav-item {
+        font-size: 0.8em;
+        margin: 0 1em;
+    }
+
+    .main__hero {
+        margin-right: 0px;
+        padding: 0;
+    }
+
+    .main__hero {
+        background-size: cover;
+        background-repeat: no-reapeat;
+        height: 300px;
+    }
+
+    .cover-text h2 {
+        text-align: center;
+    }
+
+    .landing__container {
+        max-width: 100%;
+    }
+ 
+    h2 {
+        font-size: 30px;        
+    }
+
+    section:nth-of-type(even) .landing__container {
+        margin-right: 10em;
+        margin-left: auto;
+        text-align: right; 
+    }
+
+    .section-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     #top-btn {
@@ -231,6 +253,8 @@ section:nth-of-type(even) .landing__container {
 .section-photo img {
     width: 24em;
     margin: 0 2em;
+    box-shadow: 0 4px 8px 0 gray;
+    border-radius: 10%;
 }
 
 /* Background Circles */
@@ -250,7 +274,7 @@ section:nth-of-type(odd) .landing__container::before {
 
 section:nth-of-type(even) .landing__container::before {
     content: '';
-    background: rgb(255,255,255);
+    background: #ffffff;
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
     top: 3em;
@@ -265,7 +289,7 @@ section:nth-of-type(even) .landing__container::before {
 
 section:nth-of-type(3n) .landing__container::after {
     content: '';
-    background: rgb(255,255,255);
+    background: #ffffff;
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
     right: 0;
@@ -280,7 +304,7 @@ section:nth-of-type(3n) .landing__container::after {
 
 section:nth-of-type(3n + 1) .landing__container::after {
     content: '';
-    background: rgb(255,255,255);
+    background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
     right: 20vw;
@@ -296,7 +320,6 @@ section:nth-of-type(3n + 1) .landing__container::after {
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
-/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.active-section {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
