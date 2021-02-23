@@ -1,0 +1,82 @@
+/* For screen size less than 768px*/
+@media only screen and (max-width: 768px) {
+    nav {
+        font-size: 1em;
+        text-align: center; 
+        justify-content: space-around; 
+    }
+
+    nav #logo {
+        font-size: 1em;
+    }
+
+    nav .nav-item {
+        font-size: 0.8em;
+        margin: 0 1em;
+    }
+
+    .main__hero {
+        margin-right: 0px;
+        padding: 0;
+    }
+
+    .main__hero {
+        background-size: cover;
+        background-repeat: no-reapeat;
+        height: 300px;
+    }
+
+    .cover-text h2 {
+        text-align: center;
+    }
+
+    .landing__container {
+        max-width: 100%;
+    }
+ 
+    h2 {
+        font-size: 30px;        
+    }
+
+    section:nth-of-type(even) .landing__container {
+        margin-right: 10em;
+        margin-left: auto;
+        text-align: right; 
+    }
+
+    .section-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #top-btn {
+        display: none;
+        position: fixed;
+        top: 43em;
+        right: 1em;
+    }
+}
+
+/* For screen size bigger than 560px */
+@media only screen and (min-width: 35em) {
+    .landing__container {
+        max-width: 60em;
+    }
+
+    #top-btn {
+        display: none;
+        position: fixed;
+        top: 43em;
+        right: 1em;
+    }
+}
+
+@media only screen and (min-width: 40em) {
+    #top-btn {
+        display: none;
+        position: fixed;
+        top: 43em;
+        right: 1em;
+    }
+}
