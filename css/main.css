@@ -74,7 +74,7 @@ nav .active .nav-link {
     color: #e66114;
 }
 
-.menu-icon {
+.menu-btn {
     display:none;
 }
 
@@ -104,16 +104,17 @@ nav .active .nav-link {
 
 .cover-text {
     position: absolute;
+    text-align: center;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .cover-text h2 {
-    font-size: 3em;
-    color: #f4f4f8;
-    text-shadow: 3px 3px #30303e;
-    border-bottom: 1px solid #30303e;
+    font-size: 3vw;
+    color: #fff;
+    text-shadow: 0.2vw 0.3vw #30303e;
+    border-bottom: 0.1vw solid #30303e;
 }
 
 section h2 {
@@ -186,6 +187,30 @@ section:nth-of-type(even) .landing__container {
 /* @import url(responsive.css); */
 
 @media (max-width: 425px) {
+    nav #logo{
+        font-size: 1em;
+    }
+
+    .menu-btn {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .navbar__menu ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        float: left;
+        text-align: center;
+        flex-direction: column;
+        background: rgba(48, 48, 62, 0.411);
+        width: 100%;
+        padding: 0;
+        margin-top: 55px;
+        display: none;
+    }
+
     main {
         display: grid;
         grid-template-columns: 1fr;

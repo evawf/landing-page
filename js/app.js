@@ -19,24 +19,26 @@ function buildNav() {
     }
     navbarHeight = document.getElementById('top').offsetHeight;
 }
+
 buildNav();
 
-// Add class 'active' to section when near top of viewport
+//Custom behaviours
 const mainNavBar = document.getElementById('mainNavBar');
 window.onscroll = manageScrolling;
 var hideNavCallbackTimeout;
 function manageScrolling() {
-    //handle section custom behaviours
     sections.forEach(section => {
         section.classList.remove('active-section');
         navItem = document.getElementById("nav-" + section.id);
         navItem.classList.remove('active');
+        //back to top button
         const topBtn = document.getElementById("top-btn");
         if (window.pageYOffset > 100) {
             topBtn.style.visibility = "visible";
         } else {
             topBtn.style.visibility = "hidden";
         }
+        // Add class 'active' to section when near top of viewport
         if (
             (section.offsetTop - window.pageYOffset < navbarHeight)
             &&
@@ -46,6 +48,7 @@ function manageScrolling() {
             section.classList.add('active-section');
         }
     });
+
     //handle navbar display
     mainNavBar.style.visibility = 'visible';
     clearTimeout(hideNavCallbackTimeout);
@@ -56,30 +59,16 @@ function manageScrolling() {
     }, 2500);
 }
 
-
-//Click anchor link to scroll smoothly
-// document.querySelectorAll('a[href^="#').forEach(anchor => {
-//     anchor.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         document.querySelector(this.getAttribute('href')).scrollIntoView({
-//             behavior: 'smooth'
-//         });
-//     });
-// });
-
-//Add a scroll to Top buttion
-// const topBtn = document.getElementById("top-btn");
-// window.onscroll = function () { displayTopBtn() };
-// function displayTopBtn() {
-//     if (window.pageYOffset > 100) {
-//         topBtn.style.display = "block";
-//     } else {
-//         topBtn.style.display = "none";
-//     }
-// }
-
 //Make sections collapsible
+function showMenu() {
+    const menuBtn = document.getElementById("menu-btn");
+    navbar.style.display = "none"
+    menuBtn.addEventListener('click', function(){
+        navbar.style.display = "block";  
+    });
+}
 
+showMenu();
 
 
 
