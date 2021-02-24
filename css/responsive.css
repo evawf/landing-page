@@ -1,165 +1,78 @@
-/* For screen size less than 768px
-@media only screen and (max-width: 768px) {
-    nav {
-        font-size: 1em;
-        text-align: center; 
-        justify-content: space-around; 
+
+@media screen and (max-width: 768px) {
+    #logo {
+        font-size: 1.5em;
     }
 
-    nav #logo {
-        font-size: 1em;
+    .menu-btn {
+        display: block;
+        text-decoration: none;
+        color: #fff;
     }
 
-    nav .nav-item {
-        font-size: 0.8em;
+    .navbar__menu ul:not(:first-child){
+        display: none;
+    }
+
+    .navbar__menu ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        float: left;
+        text-align: center;
+        flex-direction: column;
+        background: rgba(48, 48, 62, 0.411);
+        width: 100%;
+        padding: 0;
+        margin-top: 55px;
+        display: block;
+    }
+
+    .main__hero {
+        height: 1000px;
+    }
+
+    section h2 {
+        font-size: 2em;
         margin: 0 1em;
     }
 
-    .main__hero {
-        margin-right: 0px;
-        padding: 0;
-    }
-
-    .main__hero {
-        background-size: cover;
-        background-repeat: no-reapeat;
-        height: 300px;
-    }
-
-    .cover-text h2 {
-        text-align: center;
-    }
-
-    .landing__container {
-        max-width: 100%;
-    }
- 
-    h2 {
-        font-size: 30px;        
-    }
-
-    section:nth-of-type(even) .landing__container {
-        margin-right: 10em;
-        margin-left: auto;
-        text-align: right; 
-    }
-
     .section-content {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #top-btn {
-        display: none;
-        position: fixed;
-        top: 43em;
-        right: 1em;
-    }
-}
-
-/* For screen size bigger than 560px */
-/* @media only screen and (min-width: 35em) {
-    .landing__container {
-        max-width: 60em;
-    }
-
-    #top-btn {
-        display: none;
-        position: fixed;
-        top: 43em;
-        right: 1em;
-    }
-}
-
-@media only screen and (min-width: 40em) {
-    #top-btn {
-        display: none;
-        position: fixed;
-        top: 43em;
-        right: 1em;
-    }
-} */
-
-
-/* For screen size less than 425px */
-
-/*
-@media screen and (max-width: 768px) {
-    nav #logo {
-        font-size: 1.2em;
-        padding-left: 1em;
-    }
-
-    nav .nav-item {
-        font-size: 0.7em;
-    }
-
-    main {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr 1fr 1fr;
-        grid-gap: 0.1em;
-        grid-template-areas:
-        "cover"
-        "section1"
-        "section2"
-        "section3"
-        "section4";
-        width: 100%;
-        height: 100%;
-    }
-
-    #cover {
-        grid-area: cover;
-    }
-
-    #cover h2 {
-        text-align: center;
-        font-size: 1.8em;
-        text-overflow: clip;
-    }
-
-    #section1 {
-        grid-area: section1;
-    }
-
-    #section2 {
-        grid-area: section2;
-    }
-
-    #section3 {
-        grid-area: section3;
-    }
-
-    #section4 {
-        grid-area: section4;
-    }
-
-    section .landing__container {
-        text-align: left;
-        padding: 2em 2em;
-        margin-bottom: 0;
-    }
-
-    section .section-content {
         display: flex;
         flex-direction: column;
         flex-flow: wrap;
         justify-content: space-around;
         align-items: center;
-        margin-top: 0;
-    }
-    
-    section:nth-child(odd) .section-text {
-        margin-top: 2em;
+        margin: 0;
     }
 
-    section:nth-child(even) .section-text {
-        margin-bottom: 2em;
+    .section-text {
+        width: 100%;
+        margin: 2em;
+    }
+
+    .section-photo {
+        width: 100%;
     }
 
     section:nth-child(odd) .section-photo {
-        margin-top: 1em;
-    } 
-}*/
+        margin-top: 4em;
+    }
+
+    #top-btn {
+        position: fixed;
+        top: 51.5em;
+        right: 1em;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    section h2 {
+        border-bottom: 1px solid #30303e;
+        font-family: 'Oxygen', Sans-Serif;
+        font-size: 3em;
+        color: #30303e;
+    }
+
+}

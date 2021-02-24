@@ -34,9 +34,9 @@ function manageScrolling() {
         //back to top button
         const topBtn = document.getElementById("top-btn");
         if (window.pageYOffset > 100) {
-            topBtn.style.visibility = "visible";
+            topBtn.style.display = "block";
         } else {
-            topBtn.style.visibility = "hidden";
+            topBtn.style.display = "none";
         }
         // Add class 'active' to section when near top of viewport
         if (
@@ -60,15 +60,15 @@ function manageScrolling() {
 }
 
 //Make sections collapsible
-function showMenu() {
-    const menuBtn = document.getElementById("menu-btn");
-    navbar.style.display = "none"
+const menuBtn = document.getElementById("menu-btn");
+function showDropdownMenu() {
+    const navbar = document.getElementById('navbar__list');
     menuBtn.addEventListener('click', function(){
-        navbar.style.display = "block";  
+        navbar.style.display = "block";
     });
 }
 
-showMenu();
+showDropdownMenu();
 
 
 

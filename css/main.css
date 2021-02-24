@@ -1,4 +1,5 @@
 @import url(animation.css);
+@import url(responsive.css);
 
 /* ---- Base Rules ---- */
 html {
@@ -36,10 +37,8 @@ nav {
 
 #logo {
     text-decoration: none;
-    color: #fff;
-    font-size: 2.5em;
-    margin-left: 1em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #fff;
 }
 
 .navbar__menu ul {
@@ -89,17 +88,9 @@ nav .active .nav-link {
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
 .main__hero {
-    min-height: 780px;
+    /* min-height: 780px; */
     background: url(../images/cover.jpg) no-repeat center;
     background-size: cover;
-}
-
-.landing__container {
-    padding: 1em;
-    text-align: left;
-    max-width: 60em;
-    padding: 2em 2em;
-    margin-bottom: 3em;
 }
 
 .cover-text {
@@ -111,18 +102,9 @@ nav .active .nav-link {
 }
 
 .cover-text h2 {
-    font-size: 3vw;
     color: #fff;
     text-shadow: 0.2vw 0.3vw #30303e;
     border-bottom: 0.1vw solid #30303e;
-}
-
-section h2 {
-    border-bottom: 1px solid #30303e;
-    font-family: 'Oxygen', Sans-Serif;
-    font-size: 3em;
-    color: #30303e;
-    padding: 0 0.3em;
 }
 
 section:nth-of-type(even) .landing__container {
@@ -140,8 +122,7 @@ section:nth-of-type(even) .landing__container {
 }
 
 .section-text {
-    margin: 0 1em;
-    width: 50%;
+    margin: 0 0 1em 0;
 }
 
 .section-photo {
@@ -156,7 +137,7 @@ section:nth-of-type(even) .landing__container {
 
 #top-btn {
     position: fixed;
-    top: 43em;
+    top: 37.5em;
     right: 1em;
 }
 
@@ -184,17 +165,20 @@ section:nth-of-type(even) .landing__container {
     color: #fff;
 }
 
-/* @import url(responsive.css); */
-
-@media (max-width: 425px) {
-    nav #logo{
-        font-size: 1em;
+@media screen and (max-width: 425px) {
+    #logo{
+        font-size: 1.5em;
+        margin: 0;
     }
 
     .menu-btn {
         display: block;
         text-decoration: none;
         color: #fff;
+    }
+
+    .navbar__menu ul:not(:first-child){
+        display: none;
     }
 
     .navbar__menu ul {
@@ -208,7 +192,7 @@ section:nth-of-type(even) .landing__container {
         width: 100%;
         padding: 0;
         margin-top: 55px;
-        display: none;
+        display: block;
     }
 
     main {
@@ -246,30 +230,22 @@ section:nth-of-type(even) .landing__container {
         grid-area: section4;
     }
 
-    main main__hero {
-        min-width: 320px ;
+    .main__hero {
+        height: 675px;
     }
 
     main .cover-text h2 {
-        font-size: 1em;
         text-align: center;
     }
 
     .cover-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        text-align: center;
+
     }
 
     .landing__container {
         text-align: left;
-        padding: 2em 2em;
-        margin-bottom: 0;
-    }
-
-    .section {
-        max-width: 100%;
+        margin-top: 4em;
     }
 
     .section-content {
@@ -283,17 +259,29 @@ section:nth-of-type(even) .landing__container {
 
     .section-text {
         width: 100%;
+        margin: 0 2em;
     }
+
     .section-photo {
-        margin: 0;
         width: 100%;
     }
-/* 
 
-    .section-photo img {
-        width: 250px;
-        margin: 0 2em;
-        box-shadow: 0 4px 8px 0 gray;
-        border-radius: 10%;
-    } */
+    section:nth-child(odd) .section-photo {
+        margin-top: 1.5em;
+    }
+
+    section h2 {
+        border-bottom: 1px solid #30303e;
+        font-family: 'Oxygen', Sans-Serif;
+        font-size: 2em;
+        color: #30303e;
+    }
+
+    #top-btn {
+        position: fixed;
+        top: 37.5em;
+        right: 1em;
+    }
 }
+
+
