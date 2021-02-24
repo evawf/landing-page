@@ -22,17 +22,20 @@ function buildNav() {
 buildNav();
 
 // Add class 'active' to section when near top of viewport
-window.onscroll = function () { activeSection() };
-function activeSection() {
+const mainNavBar = document.getElementById('mainNavBar');
+window.onscroll = manageScrolling;
+var hideNavCallbackTimeout;
+function manageScrolling() {
+    //handle section custom behaviours
     sections.forEach(section => {
         section.classList.remove('active-section');
         navItem = document.getElementById("nav-" + section.id);
         navItem.classList.remove('active');
         const topBtn = document.getElementById("top-btn");
         if (window.pageYOffset > 100) {
-            topBtn.style.display = "block";
+            topBtn.style.visibility = "visible";
         } else {
-            topBtn.style.display = "none";
+            topBtn.style.visibility = "hidden";
         }
         if (
             (section.offsetTop - window.pageYOffset < navbarHeight)
@@ -43,18 +46,16 @@ function activeSection() {
             section.classList.add('active-section');
         }
     });
+    //handle navbar display
+    mainNavBar.style.visibility = 'visible';
+    clearTimeout(hideNavCallbackTimeout);
+    hideNavCallbackTimeout = setTimeout(function() {
+        if(window.pageYOffset > 0) {
+            mainNavBar.style.visibility = 'hidden';
+        }
+    }, 2500);
 }
 
-//Hide fixed navigationbar 
-var isScrolling;
-window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('nav');
-    navbar.style.display = "flex";
-    window.clearTimeout(isScrolling);
-    isScrolling = setTimeout(function () {
-        navbar.style.display = "none";
-    }, 2500);
-}, false);
 
 //Click anchor link to scroll smoothly
 // document.querySelectorAll('a[href^="#').forEach(anchor => {
@@ -78,7 +79,6 @@ window.addEventListener('scroll', function () {
 // }
 
 //Make sections collapsible
-
 
 
 
