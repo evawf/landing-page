@@ -25,6 +25,7 @@ p {
 /* Navigation Styles*/
 nav {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     color: #fff;
@@ -39,22 +40,18 @@ nav {
     text-decoration: none;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #fff;
+    font-size: 1.5em;
+    margin: 0;
 }
-
+/* 
 .navbar__menu ul {
-    flex-basis: 70%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
     text-decoration: none;
-}
-
-.navbar__menu li {
-    color: #fff;
-    margin: 0 2em;
-}
+} */
 
 .navbar__menu .nav-link {
     display: block;
@@ -74,7 +71,30 @@ nav .active .nav-link {
 }
 
 .menu-btn {
-    display:none;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar__menu ul:not(:first-child){
+    display: none;
+}
+
+.navbar__menu ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    text-align: center;
+    background: rgba(48, 48, 62, 0.411);
+    width: 100%;
+    padding: 0;
+    margin-top: 55px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: none;
+    text-decoration: none;
 }
 
 /* Header Styles */
@@ -87,15 +107,49 @@ nav .active .nav-link {
 
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 0.1em;
+    grid-template-areas:
+    "cover"
+    "section1"
+    "section2"
+    "section3"
+    "section4";
+    width: 100%;
+    height: 100%;
+}
+
+#cover {
+    grid-area: cover;
+}
+
+#section1 {
+    grid-area: section1;
+}
+
+#section2 {
+    grid-area: section2;
+}
+
+#section3 {
+    grid-area: section3;
+}
+
+#section4 {
+    grid-area: section4;
+}
+
 .main__hero {
-    /* min-height: 780px; */
+    height: 750px;
     background: url(../images/cover.jpg) no-repeat center;
     background-size: cover;
 }
 
 .cover-text {
     position: absolute;
-    text-align: center;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -105,12 +159,30 @@ nav .active .nav-link {
     color: #fff;
     text-shadow: 0.2vw 0.3vw #30303e;
     border-bottom: 0.1vw solid #30303e;
+    text-align: center;
 }
 
-section:nth-of-type(even) .landing__container {
+.landing__container {
+    margin: 4em 1.5em 2em 1.5em;
+    text-align: center;
+}
+
+section:nth-child(even) .landing__container {
+    margin: 4em 1.5em 2em 1.5em;
+    text-align: center;
+}
+
+/* section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
     text-align: right; 
+} */
+
+section h2 {
+    border-bottom: 1px solid #30303e;
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 2em;
+    color: #30303e;
 }
 
 .section-content {
@@ -118,26 +190,28 @@ section:nth-of-type(even) .landing__container {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin: 3em 0;
+    flex-flow: wrap;
+    width: 100%;
 }
 
-.section-text {
+/* .section-text {
     margin: 0 0 1em 0;
-}
+} */
 
-.section-photo {
+/* .section-photo {
     width: 50%;
     margin: 0 2em;
-}
+} */
 .section-photo img {
     box-shadow: 0 4px 8px 0 gray;
     border-radius: 10%;
     width: 100%;
+    margin: 1em 0;
 }
 
 #top-btn {
     position: fixed;
-    top: 37.5em;
+    top: 34em;
     right: 1em;
 }
 
@@ -155,133 +229,208 @@ section:nth-of-type(even) .landing__container {
 
 /* Footer Styles */
 .page__footer {
-    background: #000;
+    background: #30303e;
     padding: 1em;
     color: #fff;
-    padding-top: 1.5em;
+    margin-top: 4em;
 }
 
 .page__footer p{
     color: #fff;
 }
 
-@media screen and (max-width: 425px) {
-    #logo{
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+    #logo {
         font-size: 1.5em;
-        margin: 0;
     }
 
-    .menu-btn {
-        display: block;
-        text-decoration: none;
-        color: #fff;
-    }
-
-    .navbar__menu ul:not(:first-child){
-        display: none;
-    }
-
-    .navbar__menu ul {
-        position: absolute;
-        top: 0;
-        left: 0;
-        float: left;
+    .cover-text h2 {
+        font-size: 1.6em;
         text-align: center;
-        flex-direction: column;
-        background: rgba(48, 48, 62, 0.411);
+    }
+
+    .section-content {
+        flex-flow: wrap;
         width: 100%;
-        padding: 0;
-        margin-top: 55px;
-        display: block;
-    }
-
-    main {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr 1fr 1fr;
-        grid-gap: 0.1em;
-        grid-template-areas:
-        "cover"
-        "section1"
-        "section2"
-        "section3"
-        "section4";
-        width: 100%;
-        height: 100%;
-    }
-
-    #cover {
-        grid-area: cover;
-    }
-
-    #section1 {
-        grid-area: section1;
-    }
-
-    #section2 {
-        grid-area: section2;
-    }
-
-    #section3 {
-        grid-area: section3;
-    }
-
-    #section4 {
-        grid-area: section4;
-    }
-
-    .main__hero {
-        height: 675px;
-    }
-
-    main .cover-text h2 {
-        text-align: center;
-    }
-
-    .cover-text {
-        text-align: center;
-
-    }
-
-    .landing__container {
-        text-align: left;
-        margin-top: 4em;
     }
 
     .section-content {
         display: flex;
-        flex-direction: column;
-        flex-flow: wrap;
-        justify-content: space-around;
+        flex-direction: row;
         align-items: center;
-        margin: 0;
     }
 
     .section-text {
         width: 100%;
-        margin: 0 2em;
+    }
+
+    .section-text p {
+        line-height: 1.5em;
+        font-size: 0.9em;
     }
 
     .section-photo {
         width: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 425px) and (max-width: 760px) {
+    .landing__container {
+        margin: 4em 4em 2em 4em;
+        text-align: center;
+    }
+    
+    section:nth-child(even) .landing__container {
+        margin: 4em 4em 2em 4em;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+    #logo {
+        font-size: 1.6em;
+        padding-left: 16px;
     }
 
-    section:nth-child(odd) .section-photo {
-        margin-top: 1.5em;
+    .navbar__menu ul {
+        padding: 0;
+    }
+
+    .navbar__menu ul>li>a {
+        font-size: 1em;
+        padding: 0 0.5em
+    }
+
+    .main__hero {
+        height: 850px;
+    }
+
+    .cover-text h2 {
+        font-size: 1.8em;
+    }
+
+    .landing__container {
+        margin: 4em 8em 2em 8em;
+        text-align: center;
+    }
+    
+    section:nth-child(even) .landing__container {
+        margin: 4em 8em 2em 8em;
+        text-align: center;
+    }
+
+    section:nth-child(even) .section-content {
+        margin-bottom: 1em;
+    }
+
+    section:nth-child(odd) .section-content {
+        margin-top: 2em;
+    }
+
+    section h2 {
+        margin: 0;
+        border-bottom: 1px solid black;
+        font-size: 2em;
+    }
+
+    .section-text p {
+        line-height: 1.3em;
+        font-size: 1.2em;
+    }
+
+    .section-text {
+        margin-top: 2em;
+        width: 100%;
+    }
+
+    .section-photo {
+        margin-top: 2em;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar__menu ul>li {
+        margin: 0 2em;
+    }
+
+    .navbar__menu ul:not(:first-child){
+        display: flex;
+        flex-direction: row;
+        margin: 0 5em;
+        background: none;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        height: 100%;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    #logo {
+        font-size: 2em;
+        padding-left: 16px;
+    }
+
+    .main__hero {
+        height: 900px;
+    }
+
+    .cover-text h2 {
+        color: #fff;
+        font-size: 2em;
+        text-shadow: 0.2vw 0.2vw #30303e;
+        border-bottom: 0.1vw solid #30303e;
+    }
+
+    .landing__container {
+        margin-right: auto;
+        text-align: left;
+        width: 70%;
+    }
+
+    .section-text {
+        text-align: left;
+        width: 50%;
+        font-size: 1.2em;
+    }
+
+    section:nth-child(odd) .section-text {
+        text-align: right;
+    }
+
+    .section-photo {
+        width: 50%;
+        margin: 1em 0;
+        padding: 1em 0;
+    }
+
+    section:nth-child(even) .landing__container {
+        margin: 4em auto 4em 4em;
+        text-align: left;
+    }
+
+    section:nth-child(odd) .landing__container {
+        margin: 4em 4em 4em auto;
+        text-align: right;
+    } 
+
+    .section-content {
+        margin-bottom: 4em;
     }
 
     section h2 {
         border-bottom: 1px solid #30303e;
         font-family: 'Oxygen', Sans-Serif;
-        font-size: 2em;
         color: #30303e;
     }
 
-    #top-btn {
-        position: fixed;
-        top: 37.5em;
-        right: 1em;
+    .page__footer {
+        margin-top: 6.2em;
     }
 }
-
 
