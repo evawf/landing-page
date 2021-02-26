@@ -26,6 +26,15 @@ buildNav();
 const mainNavBar = document.getElementById('mainNavBar');
 window.onscroll = manageScrolling;
 var hideNavCallbackTimeout;
+mainNavBar.addEventListener('mouseenter', function() {
+    clearTimeout(hideNavCallbackTimeout);
+});
+mainNavBar.addEventListener('mouseover', function() {
+    clearTimeout(hideNavCallbackTimeout);
+});
+mainNavBar.addEventListener('mouseleave', function(){
+    setTimeout(maybeHideNavBar, 1000);
+});
 function manageScrolling() {
     sections.forEach(section => {
         section.classList.remove('active-section');
@@ -50,25 +59,40 @@ function manageScrolling() {
     });
 
     //handle navbar display
-    mainNavBar.style.visibility = 'visible';
+    mainNavBar.classList.remove('hidden')
     clearTimeout(hideNavCallbackTimeout);
-    hideNavCallbackTimeout = setTimeout(function() {
-        if(window.pageYOffset > 0) {
-            mainNavBar.style.visibility = 'hidden';
-        }
-    }, 2500);
+    hideNavCallbackTimeout = setTimeout(maybeHideNavBar, 2500);
 }
-
+function maybeHideNavBar() {
+    if(window.pageYOffset > 0) {
+        mainNavBar.classList.add('hidden')
+    }
+}
 //Make sections collapsible
-const menuBtn = document.getElementById("menu-btn");
-function showDropdownMenu() {
-    const navbar = document.getElementById('navbar__list');
-    menuBtn.addEventListener('click', function(){
-        navbar.style.display = "block";
-    });
+const menuBtn = document.getElementById("toggle-nav-btn");
+//const menuBtnClose = document.getElementById("menu-btn-close");
+// function showDropdownMenu() {
+menuBtn.addEventListener('click', function() {
+    if (navbar.classList.contains('expanded')) {
+        closeNavBar();
+    } else {
+        openNavBar();
+    }
+});
+navbar.addEventListener('click', closeNavBar)
+function openNavBar() {
+    navbar.classList.add('expanded');
+    menuBtn.classList.add('expanded');
 }
-
-showDropdownMenu();
+function closeNavBar() {
+    navbar.classList.remove('expanded');
+    menuBtn.classList.remove('expanded');
+}
+    // menuBtn.addEventListener('click', function() {
+    //     navbar.style.display = "none";
+    //     menuBtn.style.display = "block";
+    //     menuBtnClose.style.display = "none";
+    // });
 
 
 
