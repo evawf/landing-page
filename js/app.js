@@ -91,7 +91,6 @@ function closeNavBar() {
 //Smooth scroll behavior
 const getAnchor = 'a[href^="#"]';
 const allAnchors = document.querySelectorAll(getAnchor);
-
 allAnchors.forEach(a => {
     a.addEventListener('click', function(event) {
         event.preventDefault();
