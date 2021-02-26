@@ -89,18 +89,6 @@ function closeNavBar() {
 }
 
 //Smooth scroll behavior
-window.scroll({
-    top: 2500,
-    left: 0,
-    behavior: 'smooth'
-});
-
-window.scrollBy({
-    top: 100,
-    left: 0,
-    behavior: 'smooth'
-});
-
 const getAnchor = 'a[href^="#"]';
 const allAnchors = document.querySelectorAll(getAnchor);
 
@@ -112,4 +100,4 @@ allAnchors.forEach(a => {
             behavior: 'smooth'
         });
     })
-})
+});
