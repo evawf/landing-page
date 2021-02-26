@@ -101,7 +101,7 @@ window.scrollBy({
     behavior: 'smooth'
 });
 
-const getAnchor = 'a[href^="#"';
+const getAnchor = 'a[href^="#"]';
 const allAnchors = document.querySelectorAll(getAnchor);
 
 allAnchors.forEach(a => {
@@ -113,11 +113,4 @@ allAnchors.forEach(a => {
         });
     }
 });
-
-const options = {
-    speed: 500,
-    speedAsDuration: true,
-    offset: window.innerWidth < 768 ? 400 : 90
-}
-new SmoothScroll(allAnchors, options);
 
