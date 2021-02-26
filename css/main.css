@@ -17,7 +17,7 @@ body {
 p {
     line-height: 1.2em;
     font-size: 0.8em;
-    color: black;
+    color: #000;
     font-family: 'Oxygen', Sans-Serif;
 }
 
@@ -100,7 +100,7 @@ nav .active .nav-link {
     left: 0;
     float: left;
     text-align: center;
-    background: rgba(48, 48, 62, 0.411);
+    background: #30303e69;
     width: 100%;
     padding: 0;
     margin-top: 55px;
@@ -217,7 +217,7 @@ section h2 {
 }
 
 .section-photo img {
-    box-shadow: 0 4px 8px 0 gray;
+    box-shadow: 0 4px 8px 0 #808080;
     border-radius: 10%;
     width: 90%;
     margin: 1em 0;
@@ -265,4 +265,8 @@ section h2 {
     align-items: center;
     margin: 0 8px;
     text-decoration: none;
+}
+
+.page__footer a:hover {
+    color: #e66114;
 }
