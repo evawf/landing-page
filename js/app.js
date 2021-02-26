@@ -114,3 +114,10 @@ allAnchors.forEach(a => {
     }
 });
 
+const options = {
+    speed: 500,
+    speedAsDuration: true,
+    offset: window.innerWidth < 768 ? 400 : 90
+}
+new SmoothScroll(allAnchors, options);
+
