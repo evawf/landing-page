@@ -1,4 +1,4 @@
-@import url(animation.css);
+/* @import url(animation.css); */
 
 * {
     box-sizing: border-box;
@@ -256,7 +256,7 @@ section h2 {
 .page__footer p{
     color: #fff;
 }
-
+/* 
 @media screen and (min-width: 450px) {
     #logo {
         font-size: 1.5em;
@@ -392,4 +392,4 @@ section h2 {
         width: 100%;
         margin-top: 4em;
     }
-}
+} */
