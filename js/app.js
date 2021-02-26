@@ -105,12 +105,11 @@ const getAnchor = 'a[href^="#"]';
 const allAnchors = document.querySelectorAll(getAnchor);
 
 allAnchors.forEach(a => {
-    a.onclick = function(event) {
+    a.addEventListener('click', function(event) {
         event.preventDefault();
         const destination = document.querySelector(this.hash);
         destination.scrollIntoView({
             behavior: 'smooth'
         });
-    }
-});
-
+    })
+})
