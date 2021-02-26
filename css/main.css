@@ -252,8 +252,21 @@ section h2 {
     padding: 1em;
     color: #fff;
     margin-top: 4em;
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-start;
 }
 
 .page__footer p{
     color: #fff;
+    margin-right: 1em;
+}
+
+.page__footer a {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: 0 8px;
+    text-decoration: none;
 }
