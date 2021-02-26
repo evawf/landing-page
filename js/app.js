@@ -42,7 +42,6 @@ function manageScrolling() {
         navItem.classList.remove('active');
         //back to top button
         const topBtn = document.getElementById("top-btn");
-        topBtn.style.display = "none";
         if (window.pageYOffset > 100) {
             topBtn.style.display = "block";
         } else {
