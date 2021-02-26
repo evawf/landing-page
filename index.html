@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" id="index">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
   <title>Landing Page Project</title>
   <!-- Load Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
   <!-- Load Styles -->
   <link href="css/main.css" rel="stylesheet">
-
 </head>
 
 <body>
-  <!-- HTML Follows BEM naming conventions 
-  IDs are only used for sections to connect menu achors to sections -->
   <header id="top" class="page__header">
     <nav class="navbar__menu" id="mainNavBar">
-      <!-- Navigation starts as empty UL that will be populated with JS -->
       <a id="logo" href="#index">
         WoodenJoy
       </a>
@@ -37,10 +30,6 @@
         <h2>Educational Wooden Toys</h2>
       </div>
     </header>
-    <!-- Each Section has an ID (used for the anchor) and 
-    a data attribute that will populate the li node.
-    Adding more sections will automatically populate nav.
-    The first section is set to active class by default -->
     <section id="section1" data-nav="Section 1">
       <div class="landing__container">
         <h2>Baby Toys</h2>
@@ -123,14 +112,12 @@
             <button class="section-btn"><a href="#">Buy now</a></button>
           </div>
         </div>
-
       </div>
     </section>
   </main>
   <div id="top-btn">
     <a href="#index">TOP</a>
   </div>
-
   <footer class="page__footer">
     <p>&copy Wooden Joy, 2021</p>
   </footer>

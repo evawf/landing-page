@@ -68,9 +68,10 @@ function maybeHideNavBar() {
         mainNavBar.classList.add('hidden')
     }
 }
-//Make sections collapsible
+
+//Make navbar collapsible
 const menuBtn = document.getElementById("toggle-nav-btn");
-//const menuBtnClose = document.getElementById("menu-btn-close");
+
 // function showDropdownMenu() {
 menuBtn.addEventListener('click', function() {
     if (navbar.classList.contains('expanded')) {
@@ -88,11 +89,6 @@ function closeNavBar() {
     navbar.classList.remove('expanded');
     menuBtn.classList.remove('expanded');
 }
-    // menuBtn.addEventListener('click', function() {
-    //     navbar.style.display = "none";
-    //     menuBtn.style.display = "block";
-    //     menuBtnClose.style.display = "none";
-    // });
 
 
 
