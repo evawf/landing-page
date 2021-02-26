@@ -4,7 +4,7 @@ const sections = document.querySelectorAll('section');
 const navItems = document.getElementsByClassName('nav-item');
 let navbarHeight = 0;
 
-// build the nav
+//Build the nav
 function buildNav() {
     for (section of sections) {
         const navItem = document.createElement('li');
@@ -40,14 +40,14 @@ function manageScrolling() {
         section.classList.remove('active-section');
         navItem = document.getElementById("nav-" + section.id);
         navItem.classList.remove('active');
-        //back to top button
+        //Back to top button
         const topBtn = document.getElementById("top-btn");
         if (window.pageYOffset > 100) {
             topBtn.style.display = "block";
         } else {
             topBtn.style.display = "none";
         }
-        // Add class 'active' to section when near top of viewport
+        //Add class 'active' to section when near top of viewport
         if (
             (section.offsetTop - window.pageYOffset < navbarHeight)
             &&
@@ -58,7 +58,7 @@ function manageScrolling() {
         }
     });
 
-    //handle navbar display
+    //Handle navbar display
     mainNavBar.classList.remove('hidden')
     clearTimeout(hideNavCallbackTimeout);
     hideNavCallbackTimeout = setTimeout(maybeHideNavBar, 2500);
@@ -71,8 +71,6 @@ function maybeHideNavBar() {
 
 //Make navbar collapsible
 const menuBtn = document.getElementById("toggle-nav-btn");
-
-// function showDropdownMenu() {
 menuBtn.addEventListener('click', function() {
     if (navbar.classList.contains('expanded')) {
         closeNavBar();
@@ -90,5 +88,17 @@ function closeNavBar() {
     menuBtn.classList.remove('expanded');
 }
 
+//Smooth scroll behavior
+const getAnchor = 'a[href^="#"';
+const allAnchors = document.querySelectorAll(getAnchor);
 
+allAnchors.forEach(a => {
+    a.onclick = function(event) {
+        event.preventDefault();
+        const destination = document.querySelector(this.hash);
+        destination.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+});
 
